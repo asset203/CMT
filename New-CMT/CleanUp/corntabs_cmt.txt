@@ -1,0 +1,29 @@
+#ident  "@(#)root       1.21    04/03/23 SMI"
+#
+# The root crontab should be used to perform accounting data collection.
+#
+#
+0 3 * * * /export/home/telorb/dsim/ScriptDSIM.sh 
+45 5 * * * /export/home/vas_sys/scripts/SMPP_Parsing.sh
+45 4 * * * /export/home/vas_sys/scripts/AIR_cleanup.sh
+10 3 * * * /usr/sbin/logadm
+15 3 * * 0 /usr/lib/fs/nfs/nfsfind
+30 3 * * * [ -x /usr/lib/gss/gsscred_clean ] && /usr/lib/gss/gsscred_clean
+#10 3 * * * /usr/lib/krb5/kprop_script ___slave_kdcs___
+# Collect measurements at 10-minute intervals
+0,10,20,30,40,50   * * * *   /usr/lib/sa/sa1
+# Create daily reports and purge old files
+0                  0 * * *   /usr/lib/sa/sa2 -A
+#cleaning CCNs
+0 22 * * * /export/home/vas_sys/scripts/CCN_clean.sh
+0 23 * * * /export/home/vas_sys/scripts/MCK_SMS_clean.sh
+30 22 * * * /export/home/vas_sys/scripts/GGSN_clean.sh
+0 6 * * * /export/home/vas_sys/scripts/WEBSITE_clean.sh
+0 6 * * * /export/home/vas_sys/scripts/WEBSITE_short_clean.sh 
+45 0 * * * /export/home/vas_sys/scripts/SMPP_clean.sh
+45 0 * * * /export/home/vas_sys/scripts/AIR_cleanup.sh
+5,35 * * * * cd /housekeeping/; ./Nemo-Diskspace.sh 
+#cleaning Asset
+35 12 * * * /export/home/vas_sys/scripts/CCN_clean_Asset.sh > /export/home/vas_sys/scripts/CCN_clean_Asset.out
+
+0 5 * * * scp /export/home/vas_sys/DataCollection/resources/ftp_root/SMPPDC/SMPP_`TZ=EST23ETD date +%Y-%m-%d`.log  root@172.21.38.216:/export/home/vas_sys/DataCollection/resources/ftp_root/SMPPDC

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/security
+			http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+    <security:http pattern="/css/**" security="none"/>
+    <security:http pattern="/js/**" security="none"/>
+    <security:http pattern="/images/**" security="none"/>
+    <security:http auto-config="true"
+                   use-expressions="true">
+
+        <security:intercept-url pattern="/login" access="permitAll"/>
+        <security:intercept-url pattern="/userManagement/changePassword" access="permitAll" />
+        <security:intercept-url pattern="/userManagement/**" access="hasRole('ADMIN')" />
+        <security:intercept-url pattern="/logNotification/**" access="hasRole('ADMIN')" />
+        <security:intercept-url pattern="/**" access="isAuthenticated()"/>
+
+        <security:form-login
+                login-page="/login"
+                authentication-failure-url="/login"
+                login-processing-url="/loginProcess"/>
+
+        <security:logout
+                invalidate-session="true"
+                logout-success-url="/login"
+                logout-url="/logout"/>
+
+    </security:http>
+    <bean id="encoder"
+                class="org.springframework.security.crypto.password.StandardPasswordEncoder"/>
+    <security:authentication-manager alias="sas">
+        <security:authentication-provider>
+            <security:jdbc-user-service data-source-ref="cmtDataSource"
+                        users-by-username-query="select username, password, enabled from users where username = ? And (APPS_TO_ACCESS = 'ALL' OR APPS_TO_ACCESS = 'CMT')"
+                        authorities-by-username-query="select u.username, ur.authority from users u, authorities ur
+                        where u.id = ur.user_id and u.username =?  " />
+            <security:password-encoder ref="encoder" />
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+
+</beans>

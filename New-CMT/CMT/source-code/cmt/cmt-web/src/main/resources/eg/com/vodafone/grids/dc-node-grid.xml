@@ -1,0 +1,29 @@
+<gridUserInterface xmlns="http://www.itworx.com/ns/gridUserInterface"
+                   id="nodeGrid"
+                   var="scoringTask"
+                   width="100%"
+                   controllerUrlMapping="manageNodes">
+
+    <column id="name"
+            label="Node Name"
+            expression="var.name"
+            columnType="LABEL"
+            sortable="false"/>
+
+    <column id="actions"
+            label="Actions"
+            columnType="LINK_LIST">
+
+        <link dynamicHref="var.name"
+              onClick="editNode"
+              linkStyle="EditUser"
+              linkLabel="Edit"/>
+
+        <link dynamicHref="var.name"
+              onClick="deleteNode"
+              linkStyle="DeleteUser"
+              linkLabel="Delete"/>
+    </column>
+
+
+</gridUserInterface>

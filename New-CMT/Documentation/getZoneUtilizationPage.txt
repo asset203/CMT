@@ -1,0 +1,31 @@
+
+
+[#if zonesUtilizationList?has_content]
+                <div class="Grid SmallGrid">
+                    <tr >
+                    <table cellspacing="0" border="0" cellpadding="0" width="100%" class="tablesorter FormTable">
+                        <thead>
+                            <tr>
+                                <th width="25%" ><label> Zone  </label></th>
+                                <th width="25%"><label> Running Jobs </label> </th>
+                                <th width="25%"> <label> Next Running Jobs </label></th>
+                                <th width="25%"> <label> Assigned Jobs </label> </th>
+                                </tr>
+                            </thead>
+                        <tbody>
+                         [#list zonesUtilizationList as zone]
+
+                            <tr>  
+                                <td width="25%" style="text-align: center;"> ${zone.zoneName} </td>
+                                <td width="25%" style="text-align: center;"> ${zone.runningZoneJobs} </td>
+                                <td width="25%" style="text-align: center;"> ${zone.jobsTORun} </td>
+                                <td width="25%" style="text-align: center;"> ${zone.zoneJobs} </td>
+
+                                </tr>
+                        [/#list]
+
+                            </tbody>
+                        </table>
+                    </tr>
+                    <tr><td></td><td colspan="2">[@spring.showErrors "<br>" "errors"/]</td></tr>
+             [/#if]

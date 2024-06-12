@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="MeasDataCollection.xsl" ?>
+<!DOCTYPE mdc SYSTEM "MeasDataCollection.dtd">
+<mdc xmlns:HTML="http://www.w3.org/TR/REC-xml">
+<mfh>
+<ffv>32.401 V5.0</ffv>
+<sn>DC=ericsson.se,g3SubNetwork=Sweden,g3ManagedElement=jambala</sn>
+<st></st>
+<vn>ERICSSON</vn>
+<cbt>20180222165000.0+0200</cbt>
+</mfh>
+<md>
+<neid>
+<neun></neun>
+<nedn>DC=ericsson.se,g3SubNetwork=Sweden,g3ManagedElement=jambala</nedn>
+</neid>
+<mi>
+                <mts>20180222165500.0+0200</mts>
+                <gp>300</gp>
+                <mt>ccn.CcnPerfCounters</mt>
+                <mv>
+                                <moid>CcnCounters=Dcc-Received-Requests-0004-diamproxy.mns.ggsn.vodafone.com-32251@3gpp.org, Source = Proc_m2_s15</moid>
+                                <r>112</r>
+                </mv>
+                <mv>
+                                <moid>CcnCounters=Policy-Gx-CCR-Initial-Request-Attempts-0003-diamproxy.ggsn9-lte-pilot.ggsn.vodafone.com, Source = Proc_m2_s15</moid>
+                                <r>42</r>
+                </mv>
+                <mv>
+                                <moid>CcnCounters=Policy-Gx-CCA-Terminate-Response-Attempts-CAI5SDP64B.Vodafone.com, Source = Proc_m2_s15</moid>
+                                <r>39</r>
+                </mv>
+</mi>
+</md>
+<mff>
+<ts>20180222165500.0+0200</ts>
+</mff>
+</mdc>

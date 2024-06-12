@@ -1,0 +1,1724 @@
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Lato Light'), local('Lato-Light'), url(fonts/KT3KS9Aol4WfR6Vas8kNcg.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(fonts/9k-RPmcnxYEPm8CNFsH2gg.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(fonts/wkfQbvfT_02e2IWO3yYueQ.woff) format('woff');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: #333
+}
+
+img {
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a:focus {
+  outline: 1px dotted invert
+}
+
+ul {
+  list-style: none
+}
+
+.clear {
+  clear: both
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 100
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 10px 0
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #333
+}
+
+.PageContainer {
+  background: url(../images/BodyBg.png) no-repeat center top;
+}
+
+.MainContainer {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+.HeaderContainer {
+}
+
+.WelcomeSection {
+  text-align: right;
+  float: right;
+  padding: 25px 0 0;
+  font-size: 14px;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+}
+
+.logout {
+  background: url(../images/logout.png) no-repeat right center;
+  padding: 5px 30px 5px 0;
+  margin: 5px 0 0;
+  display: block
+}
+
+.LogoSection {
+  float: left;
+  margin: 15px
+}
+
+.LogoSection a {
+  display: block;
+  width: 542px;
+  height: 81px; /*background:url(../images/capacity_managment_tool_logo.png) no-repeat*/
+}
+
+.LayoutContainer {
+}
+
+.tabsContainer {
+  background: url(../images/tabs_bg.png) repeat-x bottom;
+  overflow: hidden;
+  padding: 0 0 2px
+}
+
+.tabsContainer .tabs li {
+  float: left;
+  margin: 0 4px 0 2px;
+  background: url(../images/tabsBG.png) repeat-x
+}
+
+.tabsContainer .tabs li.selected {
+  background: url(../images/selectedTab.png) no-repeat center bottom #fff;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  margin: 0 5px 0 3px
+}
+
+.tabsContainer .tabs li.selected:hover {
+  background: url(../images/selectedTab.png) no-repeat center bottom #fff;
+}
+
+.tabsContainer .tabs li:hover {
+  background: url(../images/tabsHover.png) repeat-x;
+}
+
+.tabsContainer .tabs li.UserManagemnt {
+  margin-left: 0
+}
+
+.tabsContainer .tabs li.KPINotifications {
+  margin-right: 0
+}
+
+.tabsContainer .tabs li a {
+  display: block;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+  height: 44px;
+  padding: 75px 10px 0;
+  width: 137px;
+  text-align: center;
+  background-position: center 12px !important
+}
+
+.tabsContainer .tabs li.UserManagemnt a {
+  background: url(../images/User_Managment.png) no-repeat
+}
+
+.tabsContainer .tabs li.LogManager a {
+  background: url(../images/Log_manager.png) no-repeat
+}
+
+.tabsContainer .tabs li.ManageDataColections a {
+  background: url(../images/define_generic_process.png) no-repeat
+}
+
+.tabsContainer .tabs li.ManageDataColectionsSystems a {
+  background: url(../images/manage_data_colections.png) no-repeat
+}
+
+.tabsContainer .tabs li.ManageDataColectionsjobs a {
+  background: url(../images/Manage_Data_colections_jobs.png) no-repeat
+}
+
+.tabsContainer .tabs li.SystemEvents a {
+  background: url(../images/System_events.png) no-repeat
+}
+
+.tabsContainer .tabs li.KPINotifications a {
+  background: url(../images/KPI_notifications.png) no-repeat;
+}
+
+.tabsContainer .tabs li.loginTab.selected {
+  background: #fff;
+  width: auto;
+  height: 61px;
+  margin: 0
+}
+
+.tabsContainer .tabs li.loginTab.selected a {
+  display: block;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  height: 47px;
+  letter-spacing: 1px;
+  padding: 14px 30px 0;
+  text-align: center;
+  width: auto;
+  color: #333;
+  background: url("../images/selectedTab.png") no-repeat scroll center bottom #FFF !important
+}
+
+.tabsContainer .tabs li.lastChildTab {
+  margin-right: 0
+}
+
+.TabContent {
+  padding: 20px 19px 20px 18px;
+  background: #f2f2f2;
+  border: 1px solid #ccc;
+  margin: 0 0 20px
+}
+
+.loginTabContent {
+  padding: 20px;
+  margin: 60px 0 0 350px;
+}
+
+.FormTable td {
+  padding: 7px;
+}
+
+.FormTable td.textareaLable {
+  vertical-align: top
+}
+
+.FormTable .Labeltd {
+  font-size: 14px;
+  width: 150px
+}
+
+/*
+      .FormTable .inputltd input[type="text"],
+      .FormTable .inputltd input[type="password"]{ width:170px; height:24px; padding:5px 5px 0;background:url(../images/input_bg.png) no-repeat left top; color:#555;border:none}
+      */
+.FormTable .inputltd textarea {
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #838383;
+  height: 100px;
+  width: 470px;
+  border-radius: 4px;
+}
+
+.FormTable .inputltd input[type="text"],
+.FormTable .inputltd input[type="password"] {
+  background: none;
+  border: none;
+  width: 226px;
+  height: 24px;
+  padding: 0 2px 4px;
+  zoom: 1;
+  margin-top: -2px;
+}
+
+.FormTable .inputltd .text {
+  background: url(../images/input_bg.png) no-repeat left top;
+  display: inline-block;
+  padding: 3px 5px 0;
+  padding: 4px 5px 0 \0/;
+  height: 26px
+}
+
+.FormTable .inputltd .text.SmallInput input[type="text"], .SmallInput input,
+.FormTable .inputltd .text.SmallInput input[type="password"] {
+  width: 76px;
+  padding: 0 2px 4px;
+  zoom: 1;
+  margin-top: -2px;
+}
+
+.FormTable .inputltd .text.SmallInput {
+  background: url(../images/smlInput.png) no-repeat left top;
+  display: inline-block;
+  padding: 3px 5px 0;
+  padding: 6px 5px 0 \0/;
+  height: 26px
+}
+
+.SubmitButtons .SubmitButton {
+  background: url(../images/SubmitButton2.png) no-repeat left top;
+  padding: 9px 5px 9px 10px;
+  display: inline-block;
+  text-align: center;
+  border: none;
+  color: #fff;
+  cursor: pointer
+}
+
+.SubmitButtons a.SubmitButton {
+  padding: 9px 5px 11px 10px;
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+  font-size: 14px
+}
+
+.SubmitButtons {
+  background: url(../images/SubmitButton2.png) no-repeat right bottom;
+  padding: 0 0 0 0;
+  height: 33px;
+  display: inline-block;
+  cursor: pointer;
+  padding: 0 5px 0 0;
+  margin: 0 10px 0 0
+}
+
+.SubmitButtons:hover {
+  background: url(../images/SubmitButton.png) no-repeat right bottom;
+}
+
+.SubmitButtons:hover .SubmitButton {
+  background: url(../images/SubmitButton.png) no-repeat left top;
+}
+
+.SubmitButtons .SubmitButton input, .SubmitButtons .SubmitButton a {
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+  text-transform: capitalize;
+  display: block
+}
+
+.SubmitButtons.Gray .SubmitButton {
+  background: url(../images/SubmitButtonGray2.png) no-repeat left top;
+  color: #555;
+}
+
+.SubmitButtons.Gray {
+  background: url(../images/SubmitButtonGray2.png) no-repeat right bottom;
+}
+
+.SubmitButtons.Gray input, .SubmitButtons.Gray a {
+  color: #555;
+}
+
+.SubmitButtons.Gray:hover {
+  background: url(../images/SubmitButtonGray.png) no-repeat right bottom;
+}
+
+.SubmitButtons.Gray:hover .SubmitButton {
+  background: url(../images/SubmitButtonGray.png) no-repeat left top;
+}
+
+.SubmitButtons.GraySmall .SubmitButton {
+  background: url(../images/SubmitButton3.png) no-repeat left top;
+  padding: 5px 5px 5px 10px
+}
+
+.SubmitButtons.GraySmall {
+  background: url(../images/SubmitButton3.png) no-repeat right bottom;
+  height: 27px
+}
+
+.SubmitButtons.GraySmall input, .SubmitButtons.GraySmall a {
+  color: #555;
+}
+
+.SubmitButtons.GraySmall:hover {
+  background: url(../images/SubmitButton4.png) no-repeat right bottom;
+}
+
+.SubmitButtons.GraySmall:hover .SubmitButton {
+  background: url(../images/SubmitButton4.png) no-repeat left top;
+}
+
+.SubmitButtons.Big .SubmitButton {
+  background: url(../images/SubmitButtonBig.png) no-repeat left top;
+  padding: 18px 5px 20px 10px
+}
+
+.SubmitButtons.Big {
+  background: url(../images/SubmitButtonBig.png) no-repeat right bottom;
+  height: 53px;
+}
+
+.SubmitButtons.Big input, .SubmitButtons.Big a {
+  color: #fff;
+}
+
+.SubmitButtons.Big:hover {
+  background: url(../images/SubmitButtonBig2.png) no-repeat right bottom;
+}
+
+.SubmitButtons.Big:hover .SubmitButton {
+  background: url(../images/SubmitButtonBig2.png) no-repeat left top;
+}
+
+.SubmitButtons.BigGreen .SubmitButton {
+  background: url(../images/SubmitButtonBigGreen.png) no-repeat left top;
+  padding: 18px 5px 20px 10px
+}
+
+.SubmitButtons.BigGreen {
+  background: url(../images/SubmitButtonBigGreen.png) no-repeat right bottom;
+  height: 53px;
+}
+
+.SubmitButtons.BigGreen .SubmitButton input, .SubmitButtons.BigGreen .SubmitButton a {
+  color: #fff;
+}
+
+.SubmitButtons.BigGreen:hover {
+  background: url(../images/SubmitButtonBigGreen2.png) no-repeat right bottom;
+}
+
+.SubmitButtons.BigGreen:hover .SubmitButton {
+  background: url(../images/SubmitButtonBigGreen2.png) no-repeat left top;
+}
+
+.SubmitButtons-input span.SubmitButton {
+  padding: 0;
+}
+
+.SubmitButtons-input input {
+  padding: 9px 5px 9px 10px;
+}
+
+.loginTabContent .SubmitButton {
+  width: 105px;
+}
+
+.loginTabContent .FormTable .Labeltd {
+  width: 100px
+}
+
+.TabContent h1 {
+  font-size: 24px;
+  margin: 0 0 5px;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+  letter-spacing: 1px
+}
+
+.TabContent h2 {
+  font-size: 17px;
+  margin: 0 0 10px;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+}
+
+.GridHeader {
+  overflow: hidden;
+  padding: 10px 0
+}
+
+.GridHeader .SubmitButtons {
+  float: left
+}
+
+.GridControl {
+  float: right;
+  padding: 5px 0 0;
+  text-align: right;
+  width: 70%;
+}
+
+.GridControl input[type="text"] {
+  margin: 0 5px;
+  padding: 4px;
+  text-align: center;
+  width: 20px;
+}
+
+.GridControl div {
+  float: right
+}
+
+.RefreshGrid {
+  background: url("../images/RefreshGrid.png") no-repeat;
+  display: block;
+  float: right;
+  font-size: 0;
+  height: 26px;
+  margin: 0 0 0 5px;
+  overflow: hidden;
+  text-indent: 1013px;
+  width: 26px;
+}
+
+.RefreshGrid:hover {
+  background: url("../images/RefreshGrid.png") no-repeat 0 -26px
+}
+
+.Grid {
+  text-align: left;
+  width: 1102px;
+}
+
+.Grid table {
+  border-bottom: 1px solid #333;
+}
+
+.Grid tr td {
+  padding: 10px 15px;
+  border-right: 1px solid #ccc;
+  font-size: 14px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.Grid tr td.firstChild {
+  padding: 10px 15px;
+  background: url(../images/firstchildBg.png) repeat-y left
+}
+
+.Grid tr td.lastChild {
+  padding: 10px 15px;
+  word-wrap: break-word;
+  word-break: keep-all;
+  background: url(../images/firstchildBg.png) repeat-y right
+}
+
+.Grid tr {
+  background: #fff
+}
+
+.Grid tr.TableHeader {
+  background: url(../images/tableheader.png) no-repeat !important;
+  border: none;
+  word-wrap: break-word;
+}
+
+.Grid tr.TableHeader th {
+  padding: 14px 15px 14px;
+  color: #fff;
+  font-size: 16px;
+  border-right: 1px solid #333;
+  line-height: 19px;
+  text-align: left;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+  text-transform: capitalize;
+  word-wrap: break-word;
+}
+
+.Grid tr.even {
+  background: #ececec;
+}
+
+.Grid tr.TableHeader th.HeaderLastChild {
+  border: none;
+  word-wrap: break-word;
+}
+
+.EditUser {
+  background: url(../images/EditUser.png) no-repeat;
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 1px 0 0 27px;
+  font-size: 14px;
+  min-width: 45px;
+  color: #3f5393
+}
+
+label.EditUser {
+  background: url(../images/EditUser_disabled.png) no-repeat;
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 1px 0 0 27px;
+  font-size: 14px;
+  min-width: 45px;
+  color: #333
+}
+
+
+.DeleteUser {
+  background: url(../images/DeleteUser.png) no-repeat;
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 1px 0 0 27px;
+  font-size: 14px;
+  color: #3f5393
+}
+
+.Activate {
+  background: url(../images/activate.png) no-repeat;
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 1px 0 0 27px;
+  font-size: 14px;
+  color: #3f5393
+}
+
+.Deactivate {
+  background: url(../images/deactivate.png) no-repeat;
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 1px 0 0 27px;
+  font-size: 14px;
+  color: #3f5393
+}
+
+.SubmitButtons  .DeleteUser {
+  margin-right: 0;
+}
+
+.Paging {
+  padding: 20px 5px;
+  text-align: center
+}
+
+.Paging a, .Paging span {
+  display: inline-block;
+  padding: 1px 3px
+}
+
+.Paging a {
+  text-decoration: none;
+  background: url(../images/paging_bg.png) no-repeat;
+  padding: 6px 0;
+  width: 27px;
+  text-align: center
+}
+
+.Paging a:hover {
+  background-position: 0 -26px
+}
+
+.Paging a.selected {
+  text-decoration: none;
+  background: url(../images/paging_bgHover.png) no-repeat;
+  color: #fff;
+  cursor: default
+}
+
+.Paging a.selected:hover {
+  background: url(../images/paging_bgHover.png) no-repeat;
+}
+
+.Paging a.prevPage {
+  background: url(../images/paging_pre.png) no-repeat;
+  width: 77px;
+  height: 26px;
+  text-indent: -9999px;
+  overflow: hidden;
+  margin: 0 5px -8px 0;
+  padding: 0
+}
+
+.Paging a.prevPage:hover {
+  background-position: 0 -26px
+}
+
+.Paging a.nextPage:hover {
+  background-position: 0 -26px
+}
+
+.Paging a.nextPage {
+  background: url(../images/paging_next.png) no-repeat;
+  width: 58px;
+  height: 26px;
+  text-indent: -9999px;
+  overflow: hidden;
+  margin: 0 0 -8px 5px;
+  padding: 0
+}
+
+.FormContainer {
+  padding: 20px
+}
+
+.RequiredField {
+  color: #ff0000
+}
+
+.FormHint {
+  color: #666;
+}
+
+.BtnWidth1 {
+  min-width: 80px
+}
+
+.fancybox-opened .fancybox-skin {
+  background: none;
+  box-shadow: none
+}
+
+.delteUserPopUP {
+  background: url(../images/popUpHeader.png) no-repeat center top;
+  width: 447px
+}
+
+.delteUserPopUPTitle {
+  font-size: 16px;
+  height: 34px;
+  padding: 12px 0 0 15px;
+  color: #fff;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+}
+
+.delteUserPopUPInner {
+  background: url(../images/popupfooter.png) no-repeat center bottom; /*height:89px ;*/
+  padding: 0 0 4px
+}
+
+@-moz-document url-prefix() { .delteUserPopUPInner {/*height:92px ;*/}}
+.delteUserPopUPInner2 {
+  background: #fff;
+  padding: 10px;
+  border-left: 1px solid #6b6b6b;
+  border-right: 1px solid #6b6b6b;
+  font-size: 14px;
+}
+
+.DeleteBtns {
+  text-align: right;
+  padding: 15px 0 5px
+}
+
+.ManageUserTabContent {
+  padding-bottom: 70px
+}
+
+label.error, .errorMsg {
+  padding: 2px 0 2px 25px;
+  background: url(../images/errormsg.png) no-repeat center left;
+  color: #ff1b04;
+  font-size: 14px;
+  display: inline-block;
+  margin: 0 15px
+}
+
+.SuccessMsg {
+  background: url(../images/successmsg.png) no-repeat 10px 10px #C8F2C8;
+  padding: 10px 10px 10px 40px;
+  border: 1px solid #3d8a58;
+  color: #3d8a58;
+  font-size: 14px;
+  margin: 0 0 10px
+}
+
+.ErrorMsg {
+  background: url("../images/errormsg.png") no-repeat 8px 10px #FFCCCE;
+  padding: 10px 10px 10px 40px;
+  border: 1px solid #A91607;
+  color: #FF1B04;
+  font-size: 14px;
+  margin: 0 0 10px;
+}
+
+/* custom drop down style */
+.cd-dropdown, .cd-select {
+  position: relative;
+  width: 240px;
+  display: inline-block;
+}
+
+.cd-dropdown > span {
+  height: 30px;
+  line-height: 27px;
+  color: #333;
+  font-size: 13px;
+  display: block;
+  padding: 0 30px 0 10px;
+  position: relative;
+  cursor: pointer;
+  background: url(../images/CustomselectIcon.png) no-repeat #f2f2f2;
+}
+
+.cd-dropdown ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  border: 1px solid #ddd;
+  border-top: none;
+  position: absolute;
+  top: 0px;
+  width: 100%
+}
+
+.cd-dropdown ul li {
+  display: block;
+}
+
+.cd-dropdown ul li span {
+  height: 30px;
+  line-height: 27px;
+  color: #555;
+  font-size: 12px;
+  display: block;
+  padding: 0 30px 0 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.cd-dropdown.cd-active ul li span {
+  background: #fff
+}
+
+.cd-dropdown ul li {
+  position: absolute;
+  width: 100%;
+  z-index: 1004
+}
+
+.cd-active.cd-dropdown > span {
+  color: #333;
+}
+
+.cd-active.cd-dropdown ul li span:hover {
+  background: #f4c4c4;
+  color: #555;
+}
+
+tr.TableHeader th span {
+  float: left
+}
+
+tr.TableHeader th .SortingIcon {
+  position: relative
+}
+
+tr.TableHeader th:hover .SortingImg {
+  display: inline-block;
+}
+
+.SortingImg {
+  background: url(../images/sorttable.png) no-repeat;
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+  text-indent: 9999px;
+  display: none;
+  float: right
+}
+
+.SortContent {
+  background: url(../images/sortingBg.png) repeat-y 30px 0 #fff;
+  border: 1px solid #ddd;
+  width: 130px;
+  display: none;
+  position: absolute;
+  top: 17px;
+  right: 0px
+}
+
+.ascending {
+  background: url(../images/ascending.png) no-repeat 7px center;
+  padding: 5px 5px 5px 40px;
+  color: #333;
+  display: block;
+  font-size: 13px;
+  font-weight: 100
+}
+
+.descending {
+  background: url(../images/descending.png) no-repeat 7px center;
+  padding: 5px 5px 5px 40px;
+  color: #333;
+  display: block;
+  font-size: 13px;
+  font-weight: 100
+}
+
+.SortingIcon.Active .SortContent {
+  display: block
+}
+
+.SortContent:hover {
+  display: block
+}
+
+.GridHeader2 {
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #838383;
+  margin-bottom: 10px
+}
+
+.BlockContainer {
+  margin: 0 0 10px;
+  background: url(../images/block_footer.png) no-repeat bottom;
+  padding: 0 0 3px
+}
+
+.BlockHeader {
+  background: url("../images/tableheader.png") no-repeat;
+  line-height: 19px;
+  padding: 14px 15px;
+}
+
+.BlockHeader h2 {
+  color: #FFFFFF;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+  font-size: 16px;
+  margin: 0
+}
+
+.BlockContent {
+  border-right: 1px solid #6b6b6b;
+  border-left: 1px solid #6b6b6b;
+  width: 1059px;
+  padding: 20px;
+  overflow: hidden
+}
+
+.CalenderView {
+  float: left;
+  width: 240px;
+  margin: 0 20px 0 0
+}
+
+.CalenderEventDetails {
+  width: 610px;
+  float: left
+}
+
+.EventDetails label {
+  width: 150px;
+  font-weight: 700;
+  color: #333;
+  font-size: 14px;
+  display: inline-block
+}
+
+.EventRow {
+  margin: 0 0 20px;
+  line-height: 20px;
+  font-size: 14px
+}
+
+.CalendarLegend {
+  float: right;
+  width: 150px;
+  padding: 0 10px
+}
+
+.CalendarLegend h3 {
+  margin: 0 0 20px
+}
+
+.LegendIcons {
+  margin: 0 0 10px;
+  font-size: 14px;
+  padding: 8px 5px 8px 40px
+}
+
+.TodayDate, .TodayDate a {
+  background: url(../images/Today_Date.png) no-repeat !important
+}
+
+.SelectedDate, .SelectedDate a {
+  background: url(../images/Selected_Date.png) no-repeat !important
+}
+
+.LevelHigh, .LevelHigh a {
+  background: url(../images/Level_High.png) no-repeat !important
+}
+
+.LevelMedium, .LevelMedium a {
+  background: url(../images/Level_Medium.png) no-repeat !important
+}
+
+.LevelLaw, .LevelLaw a {
+  background: url(../images/Level_Law.png) no-repeat !important
+}
+
+.LevelLaw a.ui-state-highlight, .LevelMedium a.ui-state-highlight, .LevelHigh a.ui-state-highlight {
+  background: url(../images/Today_Date_active.png) no-repeat !important;
+  color: #333 !important;
+}
+
+.LegendIcons.LevelHigh {
+  background-position: 0 10px !important;
+  border-top: 1px solid #CCCCCC;
+  padding-top: 20px;
+}
+
+.GotoToday {
+  margin: 10px 0 0;
+  display: none
+}
+
+.RadioInputs label {
+  display: inline-block;
+  width: 182px;
+  font-size: 14px;
+  position: relative;
+  vertical-align: top;
+}
+
+.RadioInputs label input {
+  margin: 0 5px
+}
+
+.RadioInputsSmall label {
+  display: inline-block;
+  min-width: 70px;
+  font-size: 13px;
+  vertical-align: top;
+  margin: 0 5px 0 0
+}
+
+.RadioInputsSmall label input {
+  margin: 0 5px 0 0
+}
+
+.CalenderView .turn-me-into-datepicker {
+  margin: -26px 0 0
+}
+
+.ui-datepicker-trigger {
+  background: url("../images/calendar.png") no-repeat scroll 0 0 transparent;
+  display: inline-block;
+  float: none;
+  height: 38px;
+  margin: -13px 19px 0;
+  overflow: hidden;
+  padding: 0;
+  text-indent: -2000px;
+  width: 30px;
+  border: none;
+  cursor: pointer
+}
+
+#ui-datepicker-div {
+  z-index: 100000 !important
+}
+
+.CalenderView #ui-datepicker-div {
+  display: block !important
+}
+
+.ErrorTabContent {
+  background: url("../images/ErrorPageIcon.png") no-repeat left 67px;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 20px auto;
+  padding: 60px 20px 20px 70px;
+  width: 234px;
+}
+
+.ErrorTabContent p {
+  margin: 0 0 20px
+}
+
+.ErrorTabContent input {
+  float: left
+}
+
+.ChangePasswordContent {
+  padding: 20px;
+  margin: 20px 0 0 250px;
+}
+
+.ChangePasswordContent .FormTable .Labeltd {
+  width: 200px;
+}
+
+.loading {
+  background: url(../images/loading.gif) no-repeat center center;
+  width: 100%;
+  min-height: 200px
+}
+
+.Paging a.customBtn {
+  background: url(../images/btnTest.png) repeat-x scroll 0 -1px;
+  border: 1px solid #DDDDDD;
+  border-radius: 6px 6px 6px 6px;
+  color: #333;
+  display: inline-block;
+  font-family: arial;
+  font-size: 12px;
+  height: auto;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  width: auto;
+}
+
+.Paging a.customBtn:hover {
+  background: url(../images/btnTest.png) repeat-x scroll 0 -26px
+}
+
+th.headerSortUp {
+  background: url(../images/sorttable.png) no-repeat 90% center;
+}
+
+th.headerSortDown {
+  background: url(../images/sorttable2.png) no-repeat 90% center;
+}
+
+table.tablesorter th {
+  cursor: pointer
+}
+
+.TabContent .GridHeader h2 {
+  margin: 5px 0;
+  display: inline-block
+}
+
+.LeftSideInner {
+  float: left;
+  width: 228px;
+  padding: 10px 0 0;
+}
+
+.RightSideInner {
+  float: left;
+  width: 848px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  margin: 10px 0 0;
+  border-top: 2px solid #ccc;
+}
+
+.WizardSteps {
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-right: 0;
+  border-top: 2px solid #a91607;
+}
+
+ul.StepsList {
+  margin: 0;
+  padding: 0;
+  list-style: none
+}
+
+ul.StepsList li {
+  color: #999;
+  padding: 5px 5px 5px 20px;
+  font-family: verdana;
+  font-size: 13px;
+  line-height: 18px
+}
+
+ul.StepsList li.currentStep {
+  background: url(../images/currentSteps.png) no-repeat left top #AB1607;
+  color: #fff !important
+}
+
+ul.StepsList li.FinishedSteps {
+  color: #333
+}
+
+.CustomContent1 {
+  background: #fcf6c8;
+  padding: 10px;
+  border: 1px solid #949494;
+  font-size: 14px;
+  margin: 0 0 10px
+}
+
+.CustomContent1 h4 {
+  font-weight: 700;
+  display: inline-block;
+  background: url(../images/InstructionsIcon.png) no-repeat left center;
+  padding: 2px 0 2px 25px
+}
+
+.CustomContent1 .Expandable {
+  float: right;
+  color: #555;
+  font-size: 12px
+}
+
+.ExpandableContent {
+  margin: 5px 0 0
+}
+
+.WizardBtns {
+  margin: 10px 0;
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+  overflow: hidden
+}
+
+.WizardBtns .FloatRight {
+  margin: 0
+}
+
+.FloatLeft {
+  float: left
+}
+
+.FloatRight {
+  float: right
+}
+
+.CustomContent2 {
+  background: #d8d8d8;
+  padding: 5px 10px;
+  border: none;
+  font-size: 13px;
+  margin: 0 0 10px;
+  font-family: verdana
+}
+
+.CustomContent2 span {
+  color: #a91607
+}
+
+.CustomContent2 span.Space50 {
+  width: 50px;
+  display: inline-block
+}
+
+.FormTable .inputltd .FileUpload {
+  position: relative;
+  width: 360px;
+  float: left
+}
+
+.FormTable .inputltd .FileUpload input[type="text"] {
+}
+
+/*Dimensions changed by Alia.Adel to fix issue396811*/
+.FormTable .inputltd .FileUpload input[type="file"] {
+  height: 20px;
+  font-size: 30px;
+  opacity: 0.01;
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  right: -135px;
+  cursor:pointer;
+}
+
+.FormTable .inputltd .text.largeInput input[type="text"] {
+  width: 356px;
+}
+
+.FormTable .inputltd .text.largeInput {
+  background: url(../images/input_bg_large.png) no-repeat left top;
+  display: inline-block;
+  padding: 3px 5px 0;
+  padding: 6px 5px 0 \0/;
+  height: 26px;
+  margin: 2px 10px 0 0
+}
+
+.DelimiterTD .cd-select, .DelimiterTD .cd-dropdown {
+  float: left;
+  margin: 0 20px 0 0;
+}
+
+.FormTable .inputltd.DelimiterTD input.CustomInput {
+  width: 210px
+}
+
+.SelectionHint {
+  background: url(../images/selectionHint.png) no-repeat left top;
+  padding: 9px 0 0;
+  width: 300px;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  display: none
+}
+
+.SelectionHint .SelectionHintInner {
+  background: url(../images/hintIcon.png) no-repeat 5px 5px #FCF6C8;
+  border: 1px solid #838383;
+  border-top: 0;
+  padding: 5px 5px 5px 25px;
+  font-size: 12px;
+  color: #555;
+  line-height: 18px
+}
+
+.SelectionHint .SelectionHintInner div {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0 0 3px
+}
+
+.Height100 {
+  height: 100px;
+  width: 100%;
+  clear: both
+}
+
+.selectedlable .SelectionHint {
+  display: block !important
+}
+
+.CustomInput, .FormTable .inputltd input.CustomInput {
+  padding: 5px;
+  border: 1px solid #838383;
+  background: #fff;
+  border-radius: 4px;
+  height: 18px
+}
+
+.CustomSelect, .FormTable .inputltd select.CustomSelect {
+  padding: 4px 5px;
+  border: 1px solid #838383;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.GridContainer1 {
+  overflow: auto;
+  height: 420px;
+}
+
+.Grid.SmallGrid {
+  border: 1px solid #f2f2f2;
+  border-radius: 0 7px 0 0;
+  overflow: hidden;
+  width: auto
+}
+
+.Grid.SmallGrid tr.TableHeader {
+  background: url(../images/tableheader2.png) no-repeat !important;
+  border: none
+}
+
+.Grid tr.error {
+  background: #e89292
+}
+
+.CustomContent3 {
+  background: #fff;
+  padding: 0 0 10px;
+  border: 1px solid #a91607;
+  font-size: 14px;
+  margin: 0 0 10px
+}
+
+.nodePropertiesErrorDiv {
+  width: 858px;
+}
+
+.CustomContent3 h4 {
+  font-weight: 700;
+  display: block;
+  background: url(../images/errormsg.png) no-repeat 8px 10px #ffccce;
+  color: #ff1b04;
+  padding: 10px 10px 10px 35px;
+  margin: 0 0 10px
+}
+
+.CustomContent3 p {
+  padding: 5px 10px
+}
+
+.UpdateAction {
+  background: url(../images/UpdateAction.png) no-repeat;
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 1px 0 0 27px;
+  font-size: 14px;
+  color: #3f5393
+}
+
+.CancelAction {
+  background: url(../images/CancelAction.png) no-repeat;
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 1px 0 0 27px;
+  font-size: 14px;
+  color: #3f5393
+}
+
+.NewRow .CustomInput, .NewRow .CustomSelect, .EditableRow .CustomInput, .EditableRow .CustomSelect {
+  width: 90% !important
+}
+
+.ExpandTrigger {
+  cursor: pointer;
+  padding: 0 0 0 20px;
+  background: url(../images/expand.png) no-repeat left 5px
+}
+
+.ExpandTrigger.Activate {
+  background: url(../images/collapse.png) no-repeat left 5px
+}
+
+.SubmitButtons.BigGreen.SaveProcess  .SubmitButton a {
+  background: url(../images/SaveProgress.png) no-repeat 10px 10px;
+  padding: 18px 5px 20px 50px;
+  width: auto
+}
+
+.SubmitButtons.BigGreen.SaveProcess  .SubmitButton {
+  padding: 0
+}
+
+.DeleteBtns .SubmitButtons {
+  vertical-align: top;
+}
+
+.CustomSelect2 {
+  width: 99%
+}
+
+.CustomFormInputs .CustomSelect, .CustomFormInputs .CustomInput {
+  float: left;
+  margin: 0 5px 0 0;
+  width: 42% !important;
+  padding: 5px 4px
+}
+
+.pager {
+  /*width: 720px;   height: 30px;   padding: 0;   margin: 0;   padding-top: 10px;   padding-left: 10px;*/
+}
+
+.pager span {
+  display: none
+}
+
+.pager div.short {
+  margin: 0;
+  padding: 0;
+  margin-right: 10px;
+  width: 74px;
+  display: none
+}
+
+.pager div.short input {
+  width: 28px;
+  height: 18px;
+  border: none;
+  margin-left: 8px;
+}
+
+.pager ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline;
+  margin: 0 5px;
+  text-align: center;
+}
+
+.pager ul li {
+  display: inline;
+  margin-left: 2px;
+}
+
+.pager ul li a {
+  text-decoration: none;
+  display: inline-table;
+  width: 26px;
+  text-align: center;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  padding: 6px 0
+}
+
+.pager span {
+  margin-left: 4px;
+  color: White;
+}
+
+.pager .btn {
+  background: url(../images/btnTest.png) repeat-x scroll 0 -1px;
+  border: 1px solid #DDDDDD;
+  border-radius: 6px 6px 6px 6px;
+  color: #333;
+  display: inline-block;
+  font-family: arial;
+  font-size: 12px;
+  height: auto;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  width: auto;
+  cursor: pointer;
+  margin: 0 3px
+}
+
+.pager .disabled {
+  color: #A0A0A0 !important;
+  text-shadow: 1px 1px 1px #FFFFFF;
+}
+
+.green.normal {
+  color: #555
+}
+
+.green.active, .green.active:hover {
+  background: url("../images/paging_bgHover.png") no-repeat 0 0;
+  color: #FFF;
+  cursor: default;
+  text-decoration: none;
+}
+
+.pager.green .btn {
+  color: #555
+}
+
+.bluelable {
+  color: #3f5393;
+  text-decoration: underline
+}
+
+.CustomContent4 {
+  margin: 0 0 10px;
+  font-size: 14px
+}
+
+.checkBoxTd {
+  text-align: center
+}
+
+.cd-select, #cd-dropdown {
+  padding: 4px 5px;
+  border: 1px solid #838383;
+  background: #fff;
+  border-radius: 4px;
+  height: 30px
+}
+
+.ui-autocomplete {
+  width: 170px;
+  background: #fff;
+  border: 1px solid #ccc;
+  margin: 0 0 0 -20px;
+     word-wrap: break-word;
+}
+
+.ui-autocomplete li {
+  padding: 5px;
+  }
+
+.ui-autocomplete li:hover {
+  background: #ddd;
+}
+
+.ui-helper-hidden-accessible {
+  margin: 0 0 0 20px;
+  color: #555;
+  display: none
+}
+
+.SubmitButtons.AddAction {
+  margin: 0;
+}
+
+.SubmitButtons.AddAction a {
+  background: url(../images/AddAction.png) no-repeat;
+  display: inline-block;
+  padding: 1px 15px 0 14px;
+  font-size: 14px;
+  color: #fff
+}
+
+.CustomContainer5 {
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #838383
+}
+
+.DataTable td {
+  padding: 10px;
+  font-size: 14px
+}
+
+.DataTable .Labeltd {
+  font-size: 14px;
+  width: 200px;
+  font-weight: 700
+}
+
+.fixedGrid {
+  width: 859px !important
+}
+
+.EditableField input, .EditableField select, .EditableField .HintBlock {
+  display: none
+}
+
+.ActiveEdit .EditableField input, .ActiveEdit .EditableField select {
+  display: block
+}
+
+.ActiveEdit .EditableField .HintBlock {
+  display: inline-block !important
+}
+
+.ActiveEdit span {
+  display: none
+}
+
+/*.ActiveEdit .UpdateAction,.ActiveEdit .CancelAction{display:inline-block!important}
+.ActiveEdit .DeleteUser,.ActiveEdit .EditUser{ display:none}*/
+.HintBlock {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  display: inline-block
+}
+
+.HintBlock .SelectionHint2 {
+  display: block
+}
+
+.SelectionHint2 {
+  background: url(../images/selectionHint2.png) no-repeat left top;
+  padding: 0 0 0 9px;
+  width: 300px;
+  position: absolute;
+  top: 10px;
+  left: 30px
+}
+
+.SelectionHint2 .SelectionHintInner2 {
+  background: url(../images/hintIcon.png) no-repeat 5px 5px #FCF6C8;
+  border: 1px solid #838383;
+  border-left: 0;
+  padding: 5px 5px 5px 25px;
+  font-size: 12px;
+  color: #555;
+  line-height: 18px
+}
+
+.SelectionHint2 .SelectionHintInner2 div {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0 0 3px
+}
+
+.SelectionHint3 {
+  background: url(../images/selectionHint3.png) no-repeat right top;
+  padding: 9px 0 0;
+  width: 300px;
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  display: none
+}
+
+.SelectionHint3 .SelectionHintInner3 {
+  background: url(../images/hintIcon.png) no-repeat 5px 5px #FCF6C8;
+  border: 1px solid #838383;
+  border-top: 0;
+  padding: 5px 5px 5px 25px;
+  font-size: 12px;
+  color: #555;
+  line-height: 18px
+}
+
+.SelectionHint3 .SelectionHintInner3 div {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0 0 3px
+}
+
+.HintTrigger {
+  background: url(../images/HintTrigger.png) no-repeat 0 0;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  cursor: pointer;
+  margin: 5px
+}
+
+.overlayMsg_wrapper {
+  display: none;
+}
+
+.blue {
+  color: #3f5393;
+  text-decoration: none
+}
+
+.CustomSmallInput, .CustomSmallSelect {
+  width: 80px !important
+}
+
+.NoResults {
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #838383;
+  font-size: 14px
+}
+
+#noNode {
+  width: 228px;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane {
+  position: relative;
+  margin: 0 0 -1px
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../images/btnTest.png") repeat-x 0 0;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  color: #333;
+  float: none;
+  font-weight: 100;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button:hover {
+  background: url("../images/btnTest.png") repeat-x 0 -27px;
+}
+
+.ui-widget-content {
+  margin: 0 0 30px
+}
+
+.FormTable .inputltd input.AutoCompleteInput {
+  background: url(../images/autocomplete.png) no-repeat right 7px #fff !important;
+  width: 206px;
+  padding: 5px 25px 5px 5px
+}
+
+.readonly {
+  color: #555;
+  background: #ddd
+}
+
+/*for btns with input tag*/
+
+.SubmitButtons span.SubmitButton.InputSubmitBtn{padding:0}
+.SubmitButtons span.SubmitButton.InputSubmitBtn input{padding:9px 5px 9px 10px}
+ 

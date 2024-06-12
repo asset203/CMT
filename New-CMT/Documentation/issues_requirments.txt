@@ -1,0 +1,11 @@
+
+
+	Issues:
+		Non-standard XML files cannot be integrated with CMT
+		Cannot open two sessions at the same time from the same laptop
+
+	Requirements:
+		Make the CMT able to integrate with the standard and non-standard XML & CSV files without special development
+		Developing a dashboard for the nodes, services and for projects
+		Ability to predict the utilization versus the predefined KPIs based on the current readings
+

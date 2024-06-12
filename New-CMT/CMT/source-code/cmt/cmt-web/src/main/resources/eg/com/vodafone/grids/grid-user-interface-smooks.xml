@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<smooks-resource-list xmlns="http://www.milyn.org/xsd/smooks-1.1.xsd"
+                      xmlns:jb="http://www.milyn.org/xsd/smooks/javabean-1.2.xsd">
+
+    <jb:bean beanId="gridUserInterface"
+             class="eg.com.vodafone.web.mvc.component.grid.GridUserInterface"
+             createOnElement="gridUserInterface">
+        <jb:value property="id" decoder="String" data="gridUserInterface/@id"/>
+        <jb:value property="width" decoder="String" data="gridUserInterface/@width"/>
+        <jb:value property="var" decoder="String" data="gridUserInterface/@var"/>
+        <jb:value property="controllerUrlMapping" decoder="String" data="gridUserInterface/@controllerUrlMapping"/>
+        <jb:value property="scrollable" decoder="String" data="gridUserInterface/@scrollable"/>
+        <jb:wiring property="columns" beanIdRef="columns"/>
+
+    </jb:bean>
+
+    <jb:bean beanId="columns" class="java.util.ArrayList" createOnElement="gridUserInterface">
+        <jb:wiring beanIdRef="column"/>
+    </jb:bean>
+
+    <jb:bean beanId="column"
+             class="eg.com.vodafone.web.mvc.component.grid.UIColumn"
+             createOnElement="column">
+        <jb:value property="id" decoder="String" data="column/@id"/>
+        <jb:value property="width" decoder="String" data="column/@width"/>
+        <jb:value property="label" decoder="String" data="column/@label"/>
+        <jb:value property="dbColumn" decoder="String" data="column/@dbColumn"/>
+        <jb:value property="sortable" decoder="Boolean" data="column/@sortable"/>
+        <jb:value property="sortOrder" decoder="String" data="column/@sortOrder"/>
+
+        <jb:value property="modelProperty" decoder="String" data="column/@modelProperty"/>
+        <jb:value property="expression" decoder="String" data="column/@expression"/>
+        <jb:value property="linkLabel" decoder="String" data="column/@linkLabel"/>
+        <jb:value property="dynamicLinkLabel" decoder="String" data="column/@dynamicLinkLabel"/>
+        <jb:value property="href" decoder="String" data="column/@href"/>
+        <jb:value property="dynamicHref" decoder="String" data="column/@dynamicHref"/>
+        <jb:value property="onClick" decoder="String" data="column/@onClick"/>
+        <jb:value property="dynamicOnClick" decoder="String" data="column/@dynamicOnClick"/>
+        <jb:value property="columnType" decoder="String" data="column/@columnType"/>
+
+        <jb:value property="checkBoxRowId" decoder="String" data="column/@checkBoxRowId"/>
+        <jb:value property="style" decoder="String" data="column/@style"/>
+
+        <jb:value property="linkStyle" decoder="String" data="column/@linkStyle"/>
+        <jb:value property="dataAvailable" decoder="String" data="column/@dataAvailable"/>
+        <jb:value property="splitAfter" decoder="String" data="column/@splitAfter"/>
+
+        <jb:wiring property="linkList" beanIdRef="links"/>
+    </jb:bean>
+
+    <jb:bean beanId="links" class="java.util.ArrayList" createOnElement="column">
+        <jb:wiring beanIdRef="link"/>
+    </jb:bean>
+
+    <jb:bean beanId="link"
+                 class="eg.com.vodafone.web.mvc.component.grid.UILink"
+                 createOnElement="link">
+        <jb:value property="href" decoder="String" data="link/@href"/>
+        <jb:value property="dynamicHref" decoder="String" data="link/@dynamicHref"/>
+        <jb:value property="enable" decoder="String" data="link/@enable"/>
+        <jb:value property="onClick" decoder="String" data="link/@onClick"/>
+        <jb:value property="linkLabel" decoder="String" data="link/@linkLabel"/>
+        <jb:value property="linkStyle" decoder="String" data="link/@linkStyle"/>
+    </jb:bean>
+
+</smooks-resource-list>

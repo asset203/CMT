@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>cmt</artifactId>
+        <groupId>eg.com.vodafone</groupId>
+        <version>17_PROD</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>cmt-integration</artifactId>
+
+    <packaging>jar</packaging>
+    <name>Vodafone :: CMT :: Integration</name>
+    <description>
+        <![CDATA[
+    Vodafone :: CMT :: Integration
+    ]]>
+    </description>
+
+    <dependencies>
+        <dependency>
+            <artifactId>cmt-model</artifactId>
+            <groupId>eg.com.vodafone</groupId>
+            <version>17_PROD</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>${commons-dbcp.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc</artifactId>
+            <version>${ojdbc.version}</version>
+        </dependency>
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${org.slf4j-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${org.slf4j-version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${org.slf4j-version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- End Logging -->
+        <dependency>
+            <groupId>quartz</groupId>
+            <artifactId>quartz</artifactId>
+            <version>${quartz.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.resource</groupId>
+            <artifactId>connector-api</artifactId>
+            <version>1.5</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+
+    </dependencies>
+
+
+    <profiles>
+        <!-- ITWORX DEV -->
+        <profile>
+            <id>itworx-dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <datasource-from-path>../conf/itworx-dev/datasource.properties</datasource-from-path>
+                <datasource-to-path>src/generated/resources/eg/com/vodafone/conf/datasource.properties
+                </datasource-to-path>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <tasks>
+                                        <filter token="buildLevel" value="itworx-dev"/>
+
+                                        <delete file="${datasource-to-path}"/>
+
+                                        <copy file="${datasource-from-path}" tofile="${datasource-to-path}"/>
+                                    </tasks>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <!-- Testing Environment -->
+       <!-- <profile>
+            <id>itworx-test</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <datasource-from-path>../conf/itworx-test/datasource.properties</datasource-from-path>
+                <datasource-to-path>src/generated/resources/eg/com/vodafone/conf/datasource.properties
+                </datasource-to-path>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <tasks>
+                                        <filter token="buildLevel" value="itworx-test"/>
+
+                                        <delete file="${datasource-to-path}"/>
+
+                                        <copy file="${datasource-from-path}" tofile="${datasource-to-path}"/>
+                                    </tasks>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>-->
+        <!-- PROD-LIKE Environment -->
+      <!--  <profile>
+            <id>itworx-prod-like</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <datasource-from-path>../conf/itworx-prod-like/datasource.properties</datasource-from-path>
+                <datasource-to-path>src/generated/resources/eg/com/vodafone/conf/datasource.properties
+                </datasource-to-path>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <tasks>
+                                        <filter token="buildLevel" value="itworx-prod-like"/>
+
+                                        <delete file="${datasource-to-path}"/>
+
+                                        <copy file="${datasource-from-path}" tofile="${datasource-to-path}"/>
+                                    </tasks>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>-->
+        <!-- PRODUCTION Environment -->
+        <profile>
+            <id>itworx-prod</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <datasource-from-path>../conf/itworx-prod/datasource.properties</datasource-from-path>
+                <datasource-to-path>src/generated/resources/eg/com/vodafone/conf/datasource.properties
+                </datasource-to-path>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <tasks>
+                                        <filter token="buildLevel" value="itworx-prod"/>
+
+                                        <delete file="${datasource-to-path}"/>
+
+                                        <copy file="${datasource-from-path}" tofile="${datasource-to-path}"/>
+                                    </tasks>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
+</project>

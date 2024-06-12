@@ -1,0 +1,36 @@
+<gridUserInterface xmlns="http://www.itworx.com/ns/gridUserInterface"
+                   id="dataCollectionGrid"
+                   var="scoringTask"
+                   width="100%"
+                   controllerUrlMapping="dataCollection">
+
+    <column id="name"
+            label="Data Collection Name"
+            expression="var.name"
+            columnType="LABEL"
+            sortable="false"/>
+
+    <column id="actions"
+            width="40%"
+            label="Actions"
+            columnType="LINK_LIST">
+
+        <link dynamicHref="var.name"
+              onClick="editDataCollection"
+              enable="var.enableEdit"
+              linkStyle="EditUser"
+              linkLabel="Edit"/>
+
+        <link dynamicHref="var.name"
+              onClick="deleteDataCollection"
+              linkStyle="DeleteUser"
+              linkLabel="Delete"/>
+
+        <link dynamicHref="var.name"
+              onClick="deleteDataCollectionButKeepTable"
+              linkStyle="DeleteUser"
+              linkLabel="Delete but keep table"/>
+    </column>
+
+
+</gridUserInterface>

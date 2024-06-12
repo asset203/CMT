@@ -1,0 +1,69 @@
+<gridUserInterface xmlns="http://www.itworx.com/ns/gridUserInterface"
+                   id="dcLogEntryOutputSearchResultGrid" var="scoringTask" width="100%"
+                   controllerUrlMapping="logManager">
+
+    <column id="logDate"
+            width="13%"
+            label="Date"
+            expression="var.logDate?string('dd-MMM-yyyy')"
+            columnType="LABEL"
+            dbColumn="var.logDate"
+            sortable="true"
+            sortOrder="DESC"/>
+
+    <column id="systemName"
+            width="15%"
+            label="System Name"
+            expression="var.systemName"
+            columnType="LABEL"
+            dbColumn="var.systemName"
+            sortable="true"
+            sortOrder="DESC"/>
+
+    <column id="nodeName"
+            width="15%"
+            label="Node Name"
+            expression="var.nodeName"
+            columnType="LABEL"
+            dbColumn="var.nodeName"
+            sortable="true"
+            sortOrder="DESC"/>
+
+    <column id="logType"
+            width="13%"
+            label="Log Type"
+            expression="var.logType"
+            columnType="LABEL"
+            dbColumn="var.logType"
+            sortable="true"
+            sortOrder="DESC"/>
+
+    <column id="retrialCount"
+            width="16%"
+            label="Retry Count"
+            expression="var.retrialCount"
+            columnType="LABEL"
+            dbColumn="var.retrialCount"
+            sortable="true"
+            sortOrder="DESC"/>
+
+    <column id="errorCode"
+            width="15%"
+            label="Error Code"
+            expression="var.errorCode"
+            columnType="LABEL"
+            dbColumn="var.errorCode"
+            sortable="true"
+            sortOrder="DESC"/>
+
+    <column id="logEntryDescription"
+            width="12%"
+            label="Entry Description"
+            expression="var.logEntryDescription"
+            columnType="LABEL"
+            dbColumn="var.logEntryDescription"
+            sortable="false"
+            sortOrder="DESC"
+            splitAfter="30"/>
+
+</gridUserInterface>

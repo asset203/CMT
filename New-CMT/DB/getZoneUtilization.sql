@@ -1,0 +1,18 @@
+/* Formatted on 11/12/2018 11:48:34 AM (QP5 v5.149.1003.31008) */
+SELECT 'Zone1' ZONE,
+       (SELECT COUNT (*) FROM QRTZ_FIRED_TRIGGERS) running,
+       (SELECT COUNT (*)
+          FROM QRTZ_TRIGGERS
+         WHERE NEXT_FIRE_TIME >= 1542066309000)
+          next_run,
+       (SELECT COUNT (*) FROM QRTZ_TRIGGERS) assigned
+  FROM DUAL
+UNION ALL
+SELECT 'Zone2' ZONE,
+       (SELECT COUNT (*) FROM QRTZ2_FIRED_TRIGGERS) running,
+       (SELECT COUNT (*)
+          FROM QRTZ2_TRIGGERS
+         WHERE NEXT_FIRE_TIME >= 1542066309000)
+          next_run,
+       (SELECT COUNT (*) FROM QRTZ2_TRIGGERS) assigned
+  FROM DUAL;

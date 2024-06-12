@@ -1,0 +1,92 @@
+package com.itworx.vaspp.datacollection.util;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import javax.sql.ConnectionEvent;
+import javax.sql.DataSource;
+
+import oracle.jdbc.pool.OracleConnectionCacheImpl;
+import oracle.jdbc.pool.OracleConnectionEventListener;
+import oracle.jdbc.pool.OraclePooledConnection;
+
+public class ConnectionPool extends OracleConnectionCacheImpl{
+
+	/**
+	 * serialVersionUID : long
+	 */
+	private static final long serialVersionUID = 1L;
+	private String poolName;
+	public synchronized Connection getConnection() throws SQLException {
+		// TODO Auto-generated method stub
+		Connection conn= super.getConnection();
+		if(conn.isClosed())
+			conn=getConnection();
+		System.out.println(poolName);
+		System.out .println("com.itworx.vaspp.datacollection.util.ConnectionPool.getConnection() : active connections = "+this.getActiveSize());
+		return conn;
+	}
+
+	public ConnectionPool() throws SQLException {
+		super();
+		this.m_ocel=new ConnectionListner();
+		// TODO Auto-generated constructor stub
+	}
+
+	protected void finalize() throws Throwable {
+		// TODO Auto-generated method stub
+		super.finalize();
+		System.out.println(poolName);
+		System.out.println("com.itworx.vaspp.datacollection.util.ConnectionPool.finalize(): Closing Connection pool "+this);
+		this.close();
+	}
+	
+	
+	class ConnectionListner extends OracleConnectionEventListener{
+		/**
+		 * serialVersionUID : long
+		 */
+		private static final long serialVersionUID = 1L;
+
+		public synchronized void connectionClosed(ConnectionEvent arg0) {
+			// TODO Auto-generated method stub
+			super.connectionClosed(arg0);
+			System.out.println(poolName);
+			try {
+				closePooledConnection((OraclePooledConnection)arg0.getSource());
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out
+					.println("com.itworx.vaspp.datacollection.util.ConnectionListner.connectionClosed() : " +arg0.getSource());
+		}
+
+		public synchronized void connectionErrorOccurred(ConnectionEvent arg0) {
+			// TODO Auto-generated method stub
+			super.connectionErrorOccurred(arg0);
+			System.out.println(poolName);
+			System.out
+					.println("com.itworx.vaspp.datacollection.util.ConnectionListner.connectionErrorOccurred(): "+arg0.getSource());
+		}
+
+		public synchronized void setDataSource(DataSource arg0) {
+			// TODO Auto-generated method stub
+			super.setDataSource(arg0);
+			System.out.println(poolName);
+			System.out
+					.println("com.itworx.vaspp.datacollection.util.ConnectionListner.setDataSource(): "+arg0);
+		}
+		
+	}
+
+
+	public String getPoolName() {
+		return poolName;
+	}
+
+	public void setPoolName(String poolName) {
+		this.poolName = poolName;
+	}
+
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="eg.com.vodafone.dao"/>
+
+    <bean id="cmtDataSource"
+          class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="${cmt.jdbc.driverClassName}"/>
+        <property name="url" value="${cmt.jdbc.url}"/>
+        <property name="username" value="${cmt.jdbc.username}"/>
+        <property name="password" value="${cmt.jdbc.password}"/>
+        <property name="testWhileIdle" value="true"/>
+        <property name="validationQuery" value="select 1 from DUAL"/>
+        <property name="defaultAutoCommit" value="false"/>
+    </bean>
+
+    <!-- Temp Database -->
+    <bean id="cmtTempDataSource"
+          class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close">
+        <property name="driverClassName" value="${cmtTemp.jdbc.driverClassName}"/>
+        <property name="url" value="${cmtTemp.jdbc.url}"/>
+        <property name="username" value="${cmtTemp.jdbc.username}"/>
+        <property name="password" value="${cmtTemp.jdbc.password}"/>
+        <property name="testWhileIdle" value="true"/>
+        <property name="validationQuery" value="select 1 from DUAL"/>
+        <property name="defaultAutoCommit" value="false"/>
+    </bean>
+
+    <!-- VFE_PP3 database -->
+    <bean id="vfePP3DataSource"
+          class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="${pp3.jdbc.driverClassName}"/>
+        <property name="url" value="${pp3.jdbc.url}"/>
+        <property name="username" value="${pp3.jdbc.username}"/>
+        <property name="password" value="${pp3.jdbc.password}"/>
+        <property name="testWhileIdle" value="true"/>
+        <property name="validationQuery" value="select 1 from DUAL"/>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="cmtTransactionManager"/>
+
+    <bean id="cmtTransactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="cmtDataSource"/>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="cmtTempTransactionManager"/>
+
+
+    <bean id="cmtTempTransactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="cmtTempDataSource"/>
+    </bean>
+
+
+</beans>

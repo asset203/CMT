@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<measCollecFile xmlns="http://www.3gpp.org/ftp/specs/archive/32_series/32.435#measCollec">
+    <fileHeader fileFormatVersion="3GPP_PM_32.435_XML_v11.0.0">
+        <fileSender/>
+        <measCollec beginTime="2016-10-17T11:00:00+02:00"/>
+    </fileHeader>
+    <measData>
+        <managedElement/>
+        <measInfo>
+            <job jobId="StatisticsPMJob"/>
+            <granPeriod duration="PT900S" endTime="2016-10-17T11:15:00+02:00"/>
+            <repPeriod duration="PT900S"/>
+            <measType p="1">endreserveCount.actual</measType>
+            <measType p="2">endreserveCount.delta</measType>
+            <measType p="3">endreserveFailureCount.actual</measType>
+            <measType p="4">endreserveFailureCount.delta</measType>
+            <measType p="5">endreserveSuccessCount.actual</measType>
+            <measType p="6">endreserveSuccessCount.delta</measType>
+            <measType p="7">endreserveTotalSuccessMillis.actual</measType>
+            <measType p="8">endreserveTotalSuccessMillis.delta</measType>
+            <measType p="9">reserveCount.actual</measType>
+            <measType p="10">reserveCount.delta</measType>
+            <measType p="11">reserveFailureCount.actual</measType>
+            <measType p="12">reserveFailureCount.delta</measType>
+            <measType p="13">reserveSuccessCount.actual</measType>
+            <measType p="14">reserveSuccessCount.delta</measType>
+            <measType p="15">reserveTotalSuccessMillis.actual</measType>
+            <measType p="16">reserveTotalSuccessMillis.delta</measType>
+            <measValue measObjLdn="">
+                <r p="1">0</r>
+                <r p="2">0</r>
+                <r p="3">0</r>
+                <r p="4">0</r>
+                <r p="5">0</r>
+                <r p="6">0</r>
+                <r p="7">0</r>
+                <r p="8">0</r>
+                <r p="9">0</r>
+                <r p="10">0</r>
+                <r p="11">0</r>
+                <r p="12">0</r>
+                <r p="13">0</r>
+                <r p="14">0</r>
+                <r p="15">0</r>
+                <r p="16">0</r>
+            </measValue>
+        </measInfo>
+    </measData>
+    <fileFooter>
+        <measCollec endTime="2016-10-17T11:15:00+02:00"/>
+    </fileFooter>
+</measCollecFile>

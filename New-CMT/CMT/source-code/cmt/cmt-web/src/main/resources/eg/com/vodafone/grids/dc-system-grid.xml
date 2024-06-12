@@ -1,0 +1,30 @@
+<gridUserInterface xmlns="http://www.itworx.com/ns/gridUserInterface"
+                   id="systemGrid"
+                   var="scoringTask"
+                   width="100%"
+                   controllerUrlMapping="manageSystem">
+
+    <column id="name"
+            label="System Name"
+            expression="var.name"
+            columnType="LABEL"
+            sortable="false"/>
+
+    <column id="actions"
+            width="20%"
+            label="Actions"
+            columnType="LINK_LIST">
+
+        <link dynamicHref="var.name"
+              onClick="editSystem"
+              linkStyle="EditUser"
+              linkLabel="Edit"/>
+
+        <link dynamicHref="var.name"
+              onClick="deleteSystem"
+              linkStyle="DeleteUser"
+              linkLabel="Delete"/>
+    </column>
+
+
+</gridUserInterface>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender class="org.apache.log4j.ConsoleAppender" name="CONSOLE">
+        <param name="Target" value="System.out"/>
+        <param name="Threshold" value="DEBUG"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <!-- The default pattern: Date Priority [Category] Message\n -->
+            <param name="ConversionPattern" value="%d{ABSOLUTE} %-5p [%c{1}] %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="ROLLING_FILE" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="${catalina.base}/logs/CMTWeb.log"/>
+        <param name="datePattern" value="'.'yyyy-MM-dd"/>
+        <param name="append" value="true"/>
+        <param name="Threshold" value="DEBUG"/>
+        <param name="MaxBackupIndex" value="10"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d][%p][%l] %m%n"/>
+        </layout>
+    </appender>
+
+    <category additivity="true" name="org.apache">
+        <priority value="INFO"/>
+    </category>
+    <category additivity="true" name="org.springframework">
+        <priority value="INFO"/>
+    </category>
+
+    <category additivity="true" name="eg.com.vodafone">
+        <priority value="DEBUG"/>
+    </category>
+
+    <category additivity="true" name="java.io">
+        <priority value="INFO"/>
+    </category>
+
+    <category additivity="true" name="javax.servlet">
+        <priority value="INFO"/>
+    </category>
+
+    <root>
+        <level value="info"/>
+        <appender-ref ref="ROLLING_FILE"/>
+    </root>
+
+</log4j:configuration>

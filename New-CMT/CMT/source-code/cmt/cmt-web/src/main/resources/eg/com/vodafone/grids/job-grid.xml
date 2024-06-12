@@ -1,0 +1,43 @@
+<gridUserInterface xmlns="http://www.itworx.com/ns/gridUserInterface"
+                   id="jobGrid"
+                   var="scoringTask"
+                   width="100%"
+                   controllerUrlMapping="jobManagement">
+
+    <column id="jobName"
+            label="Job Name"
+            expression="var.jobName"
+            columnType="LABEL"
+            dbColumn="var.jobName"
+            sortable="true"
+            sortOrder="DESC"/>
+
+    <column id="forceJobRunning"
+            width="15%"
+            label=" "
+            columnType="LINK_LIST">
+
+        <link dynamicHref="var.jobName"
+              onClick="forceJob"
+              linkStyle="blue"
+              linkLabel="Force Running Job"/>
+    </column>
+
+    <column id="actions"
+            width="20%"
+            label="Actions"
+            columnType="LINK_LIST">
+
+        <link dynamicHref="var.jobName"
+              onClick="updateJob"
+              linkStyle="EditUser"
+              linkLabel="Edit"/>
+
+        <link dynamicHref="var.jobName"
+              onClick="deleteJob"
+              linkStyle="DeleteUser"
+              linkLabel="Delete"/>
+    </column>
+
+
+</gridUserInterface>

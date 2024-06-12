@@ -1,0 +1,7 @@
+#ident  "@(#)root       1.21    04/03/23 SMI"
+#
+# The root crontab should be used to perform accounting data collection.
+#
+#
+#cleaning Asset
+35 12 * * * /root/cmt/CCN_clean_Asset.sh > /root/cmt/CCN_clean_Asset.out
